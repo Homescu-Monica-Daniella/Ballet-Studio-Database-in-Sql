@@ -2,7 +2,7 @@ use BalletStudio
 
 
 
---insert data – for at least 4 tables; at least one statement must violate referential integrity constraints
+--insert data â€“ for at least 4 tables; at least one statement must violate referential integrity constraints
 
 INSERT INTO Instructors (FirstName, LastName, Telephone) VALUES 
 ('Hillary', 'Barber', '(206) 342-8631'),
@@ -107,7 +107,7 @@ SELECT * FROM Students
 
 
 
---update data – for at least 3 tables
+--update data â€“ for at least 3 tables
 
 --update number of students to increment in groups where number of students is less than 12
 SELECT * FROM Groups
@@ -132,7 +132,7 @@ SELECT * FROM Tickets
 
 
 
---delete data – for at least 2 tables
+--delete data â€“ for at least 2 tables
 
 --delete showrooms where capacity is not less than 100
 INSERT INTO Showrooms (Capacity) VALUES (110);
