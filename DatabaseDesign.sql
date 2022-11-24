@@ -65,8 +65,3 @@ FirstName varchar(30),
 LastName varchar(30),
 Telephone varchar(20),
 Age int)
-
-
---use master
---go
---drop database BalletStudio
