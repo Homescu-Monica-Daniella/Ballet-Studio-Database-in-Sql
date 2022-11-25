@@ -1,4 +1,4 @@
-<pre>
+
 # Ballet-Studio-Database-in-Sql
 
 ### Database Design
@@ -48,4 +48,4 @@ For each of the scripts above, write another one that reverts the operation. Pla
 Create a new table that holds the current version of the database schema. Simplifying assumption: the version is an integer number.\
 
 Write a stored procedure that receives as a parameter a version number and brings the database to that version.
-</pre>
+
