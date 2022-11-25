@@ -11,7 +11,6 @@ BEGIN
 	ALTER COLUMN Price FLOAT
 END
 GO
---EXEC modifyPriceFromSchedulesFromIntToFloat
 
 
 CREATE OR ALTER PROCEDURE modifyPriceFromSchedulesFromFloatToInt
@@ -21,7 +20,6 @@ BEGIN
 	ALTER COLUMN Price INT
 END
 GO
---EXEC modifyPriceFromSchedulesFromFloatToInt
 
 
 --b. add / remove a column
@@ -34,7 +32,6 @@ BEGIN
 	ADD Salary FLOAT
 END
 GO
---EXEC addSalaryToInstructors
 
 
 CREATE OR ALTER PROCEDURE removeSalaryFromInstructors
@@ -44,7 +41,6 @@ BEGIN
 	DROP COLUMN Salary
 END
 GO
---EXEC removeSalaryFromInstructors
 
 
 --c. add / remove a DEFAULT constraint
@@ -58,7 +54,6 @@ BEGIN
 	DEFAULT 0 FOR Capacity
 END
 GO
---EXEC addDFCToCapacityFromShowrooms
 
 
 CREATE OR ALTER PROCEDURE removeDFCToCapacityFromShowrooms
@@ -68,7 +63,6 @@ BEGIN
 	DROP CONSTRAINT df_capacity
 END
 GO
---EXEC removeDFCToCapacityFromShowrooms
 
 
 --d. add / remove a primary key
@@ -83,7 +77,6 @@ BEGIN
 	ADD CONSTRAINT pk_Managers PRIMARY KEY(FirstName)
 END
 GO
---EXEC addPKForGuests
 
 
 CREATE OR ALTER PROCEDURE removePKFromManagers
@@ -95,7 +88,6 @@ BEGIN
 	ADD CONSTRAINT pk_Managers PRIMARY KEY(ManagerID)
 END
 GO
---EXEC removePKFromGuests
 
 
 --e. add / remove a candidate key
@@ -108,7 +100,6 @@ BEGIN
 	ADD CONSTRAINT ck_playlist UNIQUE(Artist, Source)
 END
 GO
---EXEC addCKForPlaylists
 
 
 CREATE OR ALTER PROCEDURE removeCKFromPlaylists
@@ -118,7 +109,6 @@ BEGIN
 	DROP CONSTRAINT ck_playlist
 END
 GO
---EXEC removeCKFromPlaylists
 
 
 --f. add / remove a foreign key
@@ -131,7 +121,6 @@ BEGIN
 	ADD CONSTRAINT fk_Managers FOREIGN KEY(InstructorID) REFERENCES Instructors(InstructorID)
 END
 GO
---EXEC addFKForGroups
 
 
 CREATE OR ALTER PROCEDURE removeFKFromManagers
@@ -141,7 +130,6 @@ BEGIN
 	DROP CONSTRAINT fk_Managers
 END
 GO
---EXEC removeFKFromGroups
 
 
 --g. create / drop a table
@@ -160,7 +148,6 @@ BEGIN
 	)
 END
 GO
---EXEC addManagersTable
 
 
 CREATE OR ALTER PROCEDURE dropManagersTable
@@ -169,9 +156,6 @@ BEGIN
 	DROP TABLE Managers
 END
 GO
---EXEC dropManagersTable
-
------------------------------------------------------------------------------
 
 
 CREATE TABLE currentVersion (crnt_ver INT)
@@ -251,9 +235,3 @@ GO
 EXEC bringToVersion 0
 SELECT * FROM currentVersion
 SELECT * FROM storedProcedures
-
-
---use master
---go
---drop database BalletStudio
-
