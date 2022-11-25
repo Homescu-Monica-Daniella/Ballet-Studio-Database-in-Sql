@@ -31,7 +31,7 @@ You must use:\
 
 ### Altering the Database
 
-Sometimes, after you design a database, you need to change its structure. Unfortunately, changes aren’t correct every time, so they must be reverted. Your task is to create a versioning mechanism that allows you to easily switch between database versions.\
+Sometimes, after you design a database, you need to change its structure. Unfortunately, changes aren’t correct every time, so they must be reverted. Your task is to create a versioning mechanism that allows you to easily switch between database versions.
 
 Write SQL scripts that:\
 &emsp;a. modify the type of a column;\
