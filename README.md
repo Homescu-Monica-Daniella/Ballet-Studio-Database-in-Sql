@@ -1,10 +1,10 @@
 # Ballet-Studio-Database-in-Sql
 
-### Database Design
+## Database Design
 
 Imagine a simple application that requires a database. Represent the application data in a relational structure and implement the structure in a SQL Server database. The database must contain at least: 10 tables, two 1:n relationships, one m:n relationship.
 
-### SQL Queries
+## SQL Queries
 
 On the relational structure created for the first lab, write SQL statements that:\
 &emsp;-insert data – for at least 4 tables; at least one statement must violate referential integrity constraints;\
@@ -29,7 +29,7 @@ You must use:\
 &emsp;-conditions with AND, OR, NOT, and parentheses in the WHERE clause in at least 3 queries;\
 &emsp;-DISTINCT in at least 3 queries, ORDER BY in at least 2 queries, and TOP in at least 2 queries.
 
-### Altering the Database
+## Altering the Database
 
 Sometimes, after you design a database, you need to change its structure. Unfortunately, changes aren’t correct every time, so they must be reverted. Your task is to create a versioning mechanism that allows you to easily switch between database versions.
 
