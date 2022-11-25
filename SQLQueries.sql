@@ -1,7 +1,6 @@
 use BalletStudio
 
 
-
 --insert data – for at least 4 tables; at least one statement must violate referential integrity constraints
 
 INSERT INTO Instructors (FirstName, LastName, Telephone) VALUES 
@@ -106,7 +105,6 @@ INSERT INTO Students (GroupID, FirstName, LastName, Telephone, Age) VALUES
 SELECT * FROM Students
 
 
-
 --update data – for at least 3 tables
 
 --update number of students to increment in groups where number of students is less than 12
@@ -131,7 +129,6 @@ WHERE ScheduleID IN (4, 5) AND Quantity BETWEEN 1 AND 3
 SELECT * FROM Tickets
 
 
-
 --delete data – for at least 2 tables
 
 --delete showrooms where capacity is not less than 100
@@ -147,7 +144,6 @@ SELECT * FROM Choreographys
 DELETE FROM Choreographys
 WHERE Style LIKE '%modern%' OR Dificulty='hard'
 SELECT * FROM Choreographys
-
 
 
 --a. 2 queries with the union operation; use UNION [ALL] and OR
@@ -170,7 +166,6 @@ FROM Plays P, Playlists PL, Choreographys C
 WHERE (P.PlaylistID=PL.PlaylistID AND PL.Artist='Igor Stravinsky') OR (P.ChoreographyID=C.ChoreographyID AND C.Style='neoclassical')
 
 
-
 --b. 2 queries with the intersection operation; use INTERSECT and IN
 
 --get first names that are found in both students and guests
@@ -188,7 +183,6 @@ FROM Students S
 WHERE S.LastName IN (SELECT G.LastName FROM Guests G)
 
 
-
 --c. 2 queries with the difference operation; use EXCEPT and NOT IN
 
 --get first names that are not found in both students and guests
@@ -204,7 +198,6 @@ FROM Guests G
 SELECT S.LastName
 FROM Students S
 WHERE S.LastName NOT IN (SELECT G.LastName FROM Guests G)
-
 
 
 --d. 4 queries with INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN (one query per operator); one query will join at least 3 tables, while another one will join at least two many-to-many relationships
@@ -239,7 +232,6 @@ FULL JOIN Showrooms SR ON S.ShowroomID=SR.ShowroomID
 FULL JOIN Plays P ON S.PlayID=P.PlayID
 
 
-
 --e. 2 queries with the IN operator and a subquery in the WHERE clause; in at least one case, the subquery must include a subquery in its own WHERE clause
 
 --get first and last name of guests that bought an even number of tickets
@@ -264,7 +256,6 @@ FROM Choreographys C
 WHERE C.Style='neoclassical'))
 
 
-
 --f. 2 queries with the EXISTS operator and a subquery in the WHERE clause
 
 --get id of only showrooms that appear in a schedule
@@ -286,7 +277,6 @@ FROM Students S
 WHERE S.GroupID=G.GroupID AND S.Age+1<14)
 
 
-
 --g. 2 queries with a subquery in the FROM clause
 
 --get from students with age over 18 the distinct first names of the ones that do not have last name ending in 'a'
@@ -300,7 +290,6 @@ WHERE NOT T.LastName LIKE '%a'
 SELECT TOP 1 H.ScheduleID
 FROM (SELECT * FROM Schedules S WHERE S.Date LIKE '%/2023') AS H
 WHERE H.Price>25
-
 
 
 --h. 4 queries with the GROUP BY clause, 3 of which also contain the HAVING clause; 2 of the latter will also have a subquery in the HAVING clause; use the aggregation operators: COUNT, SUM, AVG, MIN, MAX
@@ -337,7 +326,6 @@ HAVING SUM(P.Duration) =
 FROM (SELECT SUM(P.Duration) AS Total
 FROM Plays P INNER JOIN Choreographys C ON P.ChoreographyID=C.ChoreographyID
 GROUP BY C.Style) M)
-
 
 
 --i. 4 queries using ANY and ALL to introduce a subquery in the WHERE clause (2 queries per operator); rewrite 2 of them with aggregation operators, and the other 2 with IN / [NOT] IN
