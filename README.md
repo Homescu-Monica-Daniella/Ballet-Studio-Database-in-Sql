@@ -6,7 +6,7 @@ Imagine a simple application that requires a database. Represent the application
 
 ## SQL Queries
 
-On the relational structure created for the first lab, write SQL statements that:\
+On the relational structure created, write SQL statements that:\
 &emsp;-insert data – for at least 4 tables; at least one statement must violate referential integrity constraints;\
 &emsp;-update data – for at least 3 tables;\
 &emsp;-delete data – for at least 2 tables.
