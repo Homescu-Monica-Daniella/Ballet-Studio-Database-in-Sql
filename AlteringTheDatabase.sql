@@ -3,7 +3,6 @@ USE BalletStudio
 
 --a. modify the type of a column
 
-
 CREATE OR ALTER PROCEDURE modifyPriceFromSchedulesFromIntToFloat
 AS
 BEGIN
@@ -11,7 +10,6 @@ BEGIN
 	ALTER COLUMN Price FLOAT
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE modifyPriceFromSchedulesFromFloatToInt
 AS
@@ -24,7 +22,6 @@ GO
 
 --b. add / remove a column
 
-
 CREATE OR ALTER PROCEDURE addSalaryToInstructors
 AS
 BEGIN
@@ -32,7 +29,6 @@ BEGIN
 	ADD Salary FLOAT
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE removeSalaryFromInstructors
 AS
@@ -45,7 +41,6 @@ GO
 
 --c. add / remove a DEFAULT constraint
 
-
 CREATE OR ALTER PROCEDURE addDFCToCapacityFromShowrooms
 AS
 BEGIN
@@ -54,7 +49,6 @@ BEGIN
 	DEFAULT 0 FOR Capacity
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE removeDFCToCapacityFromShowrooms
 AS
@@ -67,7 +61,6 @@ GO
 
 --d. add / remove a primary key
 
-
 CREATE OR ALTER PROCEDURE addPKForManagers
 AS
 BEGIN
@@ -77,7 +70,6 @@ BEGIN
 	ADD CONSTRAINT pk_Managers PRIMARY KEY(FirstName)
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE removePKFromManagers
 AS
@@ -92,7 +84,6 @@ GO
 
 --e. add / remove a candidate key
 
-
 CREATE OR ALTER PROCEDURE addCKForPlaylists
 AS
 BEGIN
@@ -100,7 +91,6 @@ BEGIN
 	ADD CONSTRAINT ck_playlist UNIQUE(Artist, Source)
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE removeCKFromPlaylists
 AS
@@ -113,7 +103,6 @@ GO
 
 --f. add / remove a foreign key
 
-
 CREATE OR ALTER PROCEDURE addFKForManagers
 AS
 BEGIN
@@ -121,7 +110,6 @@ BEGIN
 	ADD CONSTRAINT fk_Managers FOREIGN KEY(InstructorID) REFERENCES Instructors(InstructorID)
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE removeFKFromManagers
 AS
@@ -133,7 +121,6 @@ GO
 
 
 --g. create / drop a table
-
 
 CREATE OR ALTER PROCEDURE addManagersTable
 AS
@@ -149,7 +136,6 @@ BEGIN
 END
 GO
 
-
 CREATE OR ALTER PROCEDURE dropManagersTable
 AS
 BEGIN
@@ -160,7 +146,6 @@ GO
 
 CREATE TABLE currentVersion (crnt_ver INT)
 
-
 INSERT INTO currentVersion VALUES (0)
 
 
@@ -169,7 +154,6 @@ CREATE TABLE storedProcedures (
 	to_proc INT,
 	proc_name VARCHAR(100),
 	PRIMARY KEY (from_proc, to_proc))
-
 
 INSERT INTO storedProcedures VALUES
 (0, 1, 'modifyPriceFromSchedulesFromIntToFloat'),
