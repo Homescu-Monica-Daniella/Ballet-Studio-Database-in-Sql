@@ -1,4 +1,4 @@
-# Ballet-Studio-Database-in-Sql
+# Ballet-Studio-Database
 
 ## Database Design
 
